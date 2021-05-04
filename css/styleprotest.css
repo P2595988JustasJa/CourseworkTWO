@@ -1,0 +1,476 @@
+:root {
+  --white:#f1f1f1 /* without --white, the LISTEN animation wont play */
+}
+body {
+  background-color: black;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  margin-top: 15px;
+  float: bottom;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+page-container {
+  position: relative;
+  min-height: 100%;
+}
+/* Infinite animation for "Listen" */
+.listen {
+  margin: 0;
+  font-family: Montserrat;
+  font-size: 45px;
+  color: var(--white);
+  letter-spacing: 0.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+div > span {
+  opacity: 0.15;
+}
+#I {
+  opacity: 0.4;
+  animation: flickerI 2s linear  reverse infinite;
+}
+#I::after {
+  content: '';
+  width: 150%;
+  box-shadow: -42px 0px 60px 8px #ffcfcf;
+}
+#L, #N {
+  animation: flickerLN 2s linear reverse infinite;
+  position: relative;
+}
+#L::after,
+#L::before  {
+  content:' ';
+  width: 100px;
+  height: 100px;
+  background: var(--white);
+  position: absolute;
+  top: -50%;
+  left: 100%;
+  border-radius: 100%;
+  opacity: 0.05;
+  filter: blur(10px);
+}
+#L::after {
+  width: 200px;
+  height: 200px;
+  top: -150%;
+  left: -15%;
+  opacity: 0.2;
+  filter: blur(10px);
+}
+#E {
+  animation: flickerES 4s linear reverse infinite
+}
+#T {
+  animation: flickerT 3.5s linear reverse infinite
+}
+#S {
+  animation: flickerES 2.5s linear reverse infinite
+}
+/* keyframes are used for animation */
+@keyframes flickerI {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flickerLN {
+  0% {
+    opacity: 0.19;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  15% {
+    opacity: 0.35;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.35;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+@keyframes flickerES {
+  0% {
+    opacity: 0.15;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.12;
+  }
+  15% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.15;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  40% {
+    opacity: 0.12;
+  }
+  45% {
+    opacity: 0.15;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.18;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+@keyframes flickerT {
+  0% {
+    opacity: 0.06;
+  }
+  5% {
+    opacity: 0.1;
+  }
+  10% {
+    opacity: 0.08;
+  }
+  15% {
+    opacity: 0.15;
+  }
+  25% {
+    opacity: 0.12;
+  }
+  30% {
+    opacity: 0.15;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.11;
+  }
+  45% {
+    opacity: 0.15;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.15;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.listen {
+animation: fadeinout 11s linear infinite forwards;
+}
+@keyframes fadeinout {
+0% { opacity: 0; }
+50% { opacity: 1; }
+100% { opacity: 0; }
+}
+
+
+nav {
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 0;
+  font-size: 25px;
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+/* before hover */
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #c9c9c9;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 22px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .35s;
+}
+/* after hover */
+nav ul li a:hover {
+  color: #ffcfcf;
+}
+nav.menu ul li a {
+  position: relative;
+}
+nav.menu ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #ffcfcf;
+  height: 1px;
+}
+nav.menu ul li a:hover:after {
+  width: 100%;
+}
+/* paragraphs */
+p {
+  font-size: 19px;
+  color:  #ffcfcf;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100
+}
+.thisis {
+  font-size: 24px;
+  margin: 20px;
+  padding: 35px;
+  color: grey;
+  text-align: center;
+}
+/* If I delete this, the whole heading disappears, also, text-align does not work */
+.names {
+}
+h1 {text-align: center;}
+/* Animations for headings*/
+.names {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 5s ease-in-out infinite alternate; /*back and forth infinite animations*/
+  -webkit-background-clip: text; /* This is used for the LISTEN animation */
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+.heading1 {
+  text-align: left;
+  padding-left: 325px;
+  padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #c9c9c9;
+}
+.heading2 {
+  text-align: right;
+  padding-right: 485px;
+  padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #c9c9c9;
+}
+.heading3 {
+  text-align: center;
+  padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #c9c9c9;
+}
+.heading4 {
+  text-align: right;
+  padding-right: 405px;
+  padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #c9c9c9;
+}
+  .heading5 {
+    text-align: left;
+    padding-left: 325px;
+    padding-top: 120px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: #c9c9c9;
+    width: 300px
+  }
+@keyframes animate {
+  0% {
+    background-position: -300%;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
+
+.para1 {
+  color: grey;
+  margin-top: 15px;
+  margin-left: 40px;
+  padding-top: 70px;
+  margin-bottom: 135px;
+  width: 750px
+}
+.para2 {
+ color: grey;
+ margin-left: 1000px;
+ margin-top: 85px;
+ height: 550px;
+ width: 650px;
+}
+.para3 {
+ color: grey;
+ margin-left: 1000px;
+ margin-top: 85px;
+ width: 650px;
+}
+.para4 {
+  color: grey;
+  margin-top: 70px;
+  margin-left: 40px;
+  margin-bottom: 135px;
+  width: 750px
+}
+
+
+#riot {
+  position:relative;
+
+
+  margin-left: 350px;
+  display: block;
+
+}
+
+#riot img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 1.5s ease-in-out;
+}
+
+#riot img.top:hover {
+  opacity:0;
+}
+footer {
+  height: 30px;
+  margin-top: 775px;
+background-color: white;
+text-align: center;
+}
